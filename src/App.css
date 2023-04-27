@@ -1,0 +1,15 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  background-color: #efefef;
+  font-family: "Bruno Ace SC", sans-serif;
+}
+h3{
+  color:saddlebrown;
+  position: right;
+  right: 0px;
+  width: 250px;
+
+}
