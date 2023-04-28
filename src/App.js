@@ -19,6 +19,7 @@ function App() {
   const [xPlayer, setXplayer] = useState(true);
   const [scores, setScores] = useState({ xScore: 0, oScore: 0 });
   const [gameOver, setGameOver] = useState(false);
+  const [winners, setWinners] = useState(Array(3).fill(null));
   const handleBoxClick = (boxIdx) => {
     const updatedBoard = board.map((value, idx) => {
       if (idx === boxIdx) {
@@ -50,6 +51,7 @@ function App() {
       if (board[x] && board[x] === board[y] && board[y] === board[z]) {
         console.log(board[x]);
         // [].style.backgroundcolor: green;
+        setWinners([x, y, z]);
         setGameOver(true);
         return board[x];
       }
@@ -59,6 +61,7 @@ function App() {
   const resetBoard = () => {
     setGameOver(false);
     setBoard(Array(9).fill(null));
+    setWinners(Array(3).fill(null));
     // let{oScore} = scores;
     // oScore = 0
     // let{xScore} = scores;
@@ -69,6 +72,7 @@ function App() {
   const resetGame = () => {
     setGameOver(false);
     setBoard(Array(9).fill(null));
+    setWinners(Array(3).fill(null));
     let { oScore } = scores;
     oScore = 0;
     let { xScore } = scores;
@@ -87,7 +91,11 @@ function App() {
         <center>Tic-Tac-Toe</center>
       </h1>
       <ScoreBoard scores={scores} xPlayer={xPlayer} />
-      <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
+      <Board
+        board={board}
+        winners={winners}
+        onClick={gameOver ? resetBoard : handleBoxClick}
+      />
       <ResetButton resetBoard={resetBoard} resetGame={resetGame} />
       {/* <ResetButton resetGame={resetGame}/> */}
       <h3 className="h3">Made by Olugbadebo Adesina</h3>
