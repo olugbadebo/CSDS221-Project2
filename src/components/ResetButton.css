@@ -1,10 +1,38 @@
-.reset-btn{
-    border: none;
-    border-radius: 0.5rem;
-    background-color: grey;
-    color: white;
-    font-size: 2rem;
-    padding: o.5rem 1rem;
-    margin: 2rem auto;
-    display: block;
+.reset-btn {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: grey;
+  color: white;
+  font-size: 2rem;
+  padding: o.5rem 1rem;
+  margin: 2rem auto;
+  display: block;
+}
+
+.btn-group button {
+  background-color: grey;
+  border: 1px solid grey;
+  color: white;
+  padding: 5px 5px;
+  cursor: pointer;
+  float: left;
+  text-align: center;
+  align-content: center;
+}
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+  text-align: center;
+  left: 50%;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none;
+  text-align: center;
+}
+
+.btn-group button:hover {
+  background-color: purple;
+  text-align: center;
 }
