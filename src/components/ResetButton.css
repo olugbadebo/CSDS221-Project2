@@ -36,6 +36,7 @@
 .btn-group button:hover {
   background-color: purple;
   text-align: center;
+  /* color: blue; */
 }
 .btn-group {
   /* margin: auto; */
